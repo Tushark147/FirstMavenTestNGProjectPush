@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" Functional Suite">
+
+	<groups>
+		<run>
+			<!-- <include name="bvt"></include> -->
+			<exclude name="bvt"></exclude>
+		</run>
+	</groups>
+
+	<listeners>
+		<listener class-name="customListeners.Listeners"></listener>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+	</listeners>
+
+	<test name="Login Test">
+		<classes>
+			<class name="testcases.Testcase1" />
+			<class name="parameterization.TestNGParameterizationExcel" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Validating Title Test">
+		<classes>
+			<class name="testcases.Testcase2" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Dependency Test"> <!-- Creating Groups at Test level -->
+
+		<groups>
+			<run>
+				<include name="bvt"></include>
+
+			</run>
+		</groups>
+		<classes>
+			<class name="testcases.Testcase3" />
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Failure Test">
+		<classes>
+			<class name="testcases.TestFailure" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
