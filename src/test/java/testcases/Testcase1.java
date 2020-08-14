@@ -29,12 +29,14 @@ public class Testcase1 extends BaseTest {
 	public void doUserReg()
 	{
 		System.out.println("Executing User Reg Test");
+		System.out.println("For Registeration");
 	}
 	
 	@Test(priority=2)
 	void doLogin()
 	{
 		System.out.println("Executing Login Test");
+		System.out.println("For Signing in");
 	}
 	
 	@AfterMethod
